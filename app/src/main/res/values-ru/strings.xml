@@ -1,0 +1,9 @@
+<resources>
+    <string name="btnNext">ДАЛЕЕ</string>
+    <string name="secondPage">Первый лаунчер с \nбесконечном скролингом!</string>
+    <string name="thirdPage">Поддерживает портретную и \nпейзажную ориентации!</string>
+    <string name="changeColumns">Выберите количество столбцов для портретной и пейзажной ориентаций:</string>
+    <string name="changeTheme">Выберите тему оформления:</string>
+    <string name="light">Светлая</string>
+    <string name="dark">Тёмная</string>
+</resources>

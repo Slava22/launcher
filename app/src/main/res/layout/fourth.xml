@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/changeColumns"
+        android:textSize="20dp"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/radioButton46"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="4-6"
+            android:textSize="15dp"
+            android:textStyle="italic"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/radioButton57"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="5-7"
+            android:textSize="15dp"
+            android:textStyle="italic"/>
+    </RadioGroup>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/changeTheme"
+        android:textSize="20dp"/>
+
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RadioButton
+            android:id="@+id/lightBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/light"
+            android:textSize="15dp"
+            android:textStyle="italic"
+            android:checked="true"/>
+
+        <RadioButton
+            android:id="@+id/darkBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/dark"
+            android:textSize="15dp"
+            android:textStyle="italic"/>
+    </RadioGroup>
+
+</LinearLayout>

@@ -1,0 +1,10 @@
+<resources>
+    <string name="app_name">Comet Launcher</string>
+    <string name="btnNext">NEXT</string>
+    <string name="secondPage">The first launcher with \ninfinite scrolling!</string>
+    <string name="thirdPage">Supports portrait and \nlandscape screen orientation!</string>
+    <string name="changeColumns">Select the number of columns in portrait and landscape orientation:</string>
+    <string name="changeTheme">Choose a theme:</string>
+    <string name="light">Light</string>
+    <string name="dark">Dark</string>
+</resources>

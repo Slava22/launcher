@@ -1,0 +1,9 @@
+<resources>
+    <string name="btnNext">القادم</string>
+    <string name="secondPage">أول قاذفة مع التمرير لانهائية!</string>
+    <string name="thirdPage">يدعم صورة والمناظر الطبيعية التوجه شاشة!</string>
+    <string name="changeColumns">حدد عدد الأعمدة في صورة والمناظر الطبيعية التوجه:</string>
+    <string name="changeTheme">اختيار الموضوع:</string>
+    <string name="light">الضوء</string>
+    <string name="dark">الظلام</string>
+</resources>
