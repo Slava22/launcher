@@ -55,7 +55,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         icons = init();
         for (int i = 0; i < 10000; i++){
             int a = rnd.nextInt(icons.size());
-            apps.add(new Application(new String("App " + (i + 1)), icons.get(a)));
+            apps.add(new Application(new String("App " + Integer.toString(i + 1, 16)), icons.get(a)));
             icons.remove(a);
             if(icons.size() == 1){
                 icons = init();
