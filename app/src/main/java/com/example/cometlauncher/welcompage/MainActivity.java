@@ -22,6 +22,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnNext;
     private ViewPager viewPager;
     private ViewPagerAdapter viewPagerAdapter;
+    private FragmentsPagerAdapter fragmentsPagerAdapter;
     private boolean isChecked;
 
     List<Application> apps;
@@ -39,9 +40,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnNext.setOnClickListener(this);
 
         viewPager = (ViewPager) findViewById(R.id.vpager);
-        viewPagerAdapter = new ViewPagerAdapter(this);
+        fragmentsPagerAdapter = new FragmentsPagerAdapter(getSupportFragmentManager());
+        //viewPagerAdapter = new ViewPagerAdapter(this);
         if (viewPager != null) {
-            viewPager.setAdapter(viewPagerAdapter);
+            viewPager.setAdapter(fragmentsPagerAdapter);
         }
         CirclePageIndicator circleIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
         circleIndicator.setViewPager(viewPager);
@@ -82,9 +84,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         switch (view.getId()) {
             case R.id.buttonNext:
                 Intent intent = new Intent(MainActivity.this, RecyclerView.class);
-                if (viewPager.getCurrentItem() < viewPagerAdapter.getCount() - 1) {
+                if (viewPager.getCurrentItem() < fragmentsPagerAdapter.getCount() - 1) {
                     viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
-                } else if (viewPager.getCurrentItem() + 1 == viewPagerAdapter.getCount()) {
+                } else if (viewPager.getCurrentItem() + 1 == fragmentsPagerAdapter.getCount()) {
                     isChecked = ((RadioButton) findViewById(R.id.radioButton46)).isChecked();
                     if (isChecked) {
                         intent.putExtra("port", 4);
