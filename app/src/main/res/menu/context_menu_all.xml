@@ -4,4 +4,6 @@
         android:title="Удалить" />
     <item android:id="@+id/info"
         android:title="Инфо" />
+    <item android:id="@+id/addToFav"
+        android:title="Добавить в избранное" />
 </menu>

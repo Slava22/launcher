@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="5dp">
+
+    <cn.zhaiyifan.rememberedittext.RememberEditText
+        android:id="@+id/uriText"
+        android:inputType="text"
+        android:layout_width="wrap_content"
+        android:layout_height="45dp"
+        android:layout_alignBottom="@+id/imgBtnPref"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_toLeftOf="@+id/imgBtnPref"
+        android:layout_toStartOf="@+id/imgBtnPref"
+        android:layout_alignTop="@+id/imgBtnPref"
+        app:autoFill="true"
+        app:autoSave="true"
+        app:rememberCount="3"
+        app:rememberId="uris"/>
+
+    <ImageButton
+        android:id="@+id/imgBtnPref"
+        android:layout_width="45dp"
+        android:layout_height="45dp"
+        android:src="@drawable/ic_pref"
+        android:background="#00999999"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:contentDescription=""
+        tools:ignore="ContentDescription" />
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rvf"
+        android:scrollbars="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/uriText" />
+
+</RelativeLayout>

@@ -2,22 +2,30 @@
 
     package="com.example.cometlauncher">
 
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_comet"
         android:label="@string/app_name"
         android:roundIcon="@drawable/ic_comet"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:launchMode="singleTask"
+        android:stateNotNeeded="true">
         <activity android:name=".welcompage.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
+                <category android:name="android.intent.category.HOME" />
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
         <activity
-            android:name=".launcher.RecyclerView"
-            android:label="Applications List" />
+            android:name=".launcher.Launcher" />
+        <activity
+            android:name=".launcher.PrefActivity">
+        </activity>
     </application>
 
 </manifest>

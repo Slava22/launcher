@@ -26,7 +26,7 @@ public class FourthFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fourth, container, false);
+        View view = inflater.inflate(R.layout.fourth_fragmgment_welcompage, container, false);
         return view;
     }
 }

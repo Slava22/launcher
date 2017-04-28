@@ -9,6 +9,7 @@ import android.view.ViewGroup;
 
 import com.example.cometlauncher.R;
 
+
 public class SecondFragment extends Fragment {
     public static SecondFragment newInstance() {
         Bundle args = new Bundle();
@@ -25,7 +26,7 @@ public class SecondFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.second, container, false);
+        View view = inflater.inflate(R.layout.second_fragment_welcompage, container, false);
         return view;
     }
 }

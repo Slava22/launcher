@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="title_activity_settings">Settings</string>
+    <string name="pref_header_favourites">Избранное</string>
+    <string name="pref_header_uri">Uri</string>
+    <string name="pref_header_view">Вид</string>
+    <string name="favourites_app">Раздел “Избранные приложения”</string>
+    <string name="clear_favourites_app">Очистить “Избранные приложения”</string>
+    <string name="change_theme">Тема оформления</string>
+    <string name="count_columns">Количество столбцов</string>
+    <string name="count_uri">Количество запоминаемых uri</string>
+    <string name="count_uri_title">Введите количество запоминаемых uri</string>
+    <string name="clear_uri">Очистить историю введенных uri</string>
+    <string-array name="pref_change_theme_titles">
+        <item>Светлая</item>
+        <item>Тёмная</item>
+    </string-array>
+    <string-array name="pref_change_theme_values">
+        <item>1</item>
+        <item>-1</item>
+    </string-array>
+    <string-array name="pref_count_columns_titles">
+        <item>4 в альбомной\n6 в портретной</item>
+        <item>5 в альбомной\n7 в портретной</item>
+    </string-array>
+    <string-array name="pref_count_columns_values">
+        <item>46</item>
+        <item>57</item>
+    </string-array>
+</resources>

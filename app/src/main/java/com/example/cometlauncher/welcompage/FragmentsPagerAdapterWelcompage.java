@@ -9,11 +9,11 @@ import com.example.cometlauncher.welcompage.fragments.FourthFragment;
 import com.example.cometlauncher.welcompage.fragments.SecondFragment;
 import com.example.cometlauncher.welcompage.fragments.ThirdFragment;
 
-public class FragmentsPagerAdapter extends FragmentPagerAdapter {
+public class FragmentsPagerAdapterWelcompage extends FragmentPagerAdapter {
 
     private static int NUM_ITEMS = 4;
 
-    public FragmentsPagerAdapter(FragmentManager fragmentManager) {
+    public FragmentsPagerAdapterWelcompage(FragmentManager fragmentManager) {
         super(fragmentManager);
     }
 
