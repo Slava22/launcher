@@ -65,7 +65,7 @@ public class AllAppsFragment extends Fragment implements SharedPreferences.OnSha
         mRecyclerView = (android.support.v7.widget.RecyclerView) view.findViewById(R.id.rv);
         mRecyclerView.setLayoutManager(mLayoutManager);
 
-        mAdapter = new RecyclerViewAllAppsFragmentAdapter(apps, heightCard(), getActivity().getApplicationContext(), getActivity().getPackageManager());
+        mAdapter = new RecyclerViewAllAppsFragmentAdapter(apps, heightCard(), getContext(), getActivity().getPackageManager());
         mRecyclerView.setAdapter(mAdapter);
 
         return view;
