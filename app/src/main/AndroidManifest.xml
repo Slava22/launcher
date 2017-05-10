@@ -21,8 +21,12 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".launcher.Launcher" />
+        <activity android:name=".launcher.Launcher" >
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <action android:name="android.intent.action.PACKAGE_ADDED"/>
+            </intent-filter>
+        </activity>
         <activity
             android:name=".launcher.PrefActivity">
         </activity>

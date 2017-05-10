@@ -1,6 +1,9 @@
 package com.example.cometlauncher.launcher.Fragments.AllAppsFragment;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.content.res.Configuration;
 import android.os.Bundle;
@@ -9,6 +12,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.GridLayoutManager;
 import android.util.DisplayMetrics;
+import android.util.Log;
 import android.view.Display;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -20,6 +24,8 @@ import com.example.cometlauncher.R;
 
 import java.util.List;
 
+import static android.content.ContentValues.TAG;
+
 public class AllAppsFragment extends Fragment implements SharedPreferences.OnSharedPreferenceChangeListener {
 
     SharedPreferences pref;
@@ -30,6 +36,7 @@ public class AllAppsFragment extends Fragment implements SharedPreferences.OnSha
     private int portret;
     private int landscape;
     private int nowColumns;
+    private boolean theme;
     private boolean favourites;
     private int widthScreen;
     private List<Application> apps;
@@ -68,8 +75,23 @@ public class AllAppsFragment extends Fragment implements SharedPreferences.OnSha
         mAdapter = new RecyclerViewAllAppsFragmentAdapter(apps, heightCard(), getContext(), getActivity().getPackageManager());
         mRecyclerView.setAdapter(mAdapter);
 
+
+        IntentFilter iFilter = new IntentFilter(Intent.ACTION_PACKAGE_REMOVED);
+        getActivity().registerReceiver(myReceiver, iFilter);
+
+
         return view;
     }
+
+    private final BroadcastReceiver myReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String action = intent.getAction();
+            if(action.equals(Intent.ACTION_PACKAGE_REMOVED)) {
+                Log.d(TAG,"Del");
+            }
+        }
+    };
 
     private void getScreenOrientation() {
         if (getResources().getConfiguration().orientation == Configuration.ORIENTATION_PORTRAIT) {
@@ -103,9 +125,16 @@ public class AllAppsFragment extends Fragment implements SharedPreferences.OnSha
             landscape = 7;
         }
 
+        if (pref.getString("theme", "").equals("1")){
+            theme = true;
+        } else if (pref.getString("theme", "").equals("-1")){
+            theme = false;
+        }
+
         SharedPreferences.Editor ed = sPref.edit();
         ed.putInt("portret", portret);
         ed.putInt("landscape", landscape);
+        ed.putBoolean("theme", theme);
         ed.apply();
     }
 }

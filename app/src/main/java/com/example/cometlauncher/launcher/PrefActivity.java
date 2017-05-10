@@ -30,6 +30,7 @@ public class PrefActivity extends PreferenceActivity {
             public boolean onPreferenceClick(Preference preference) {
                 ListApps la = new ListApps();
                 la.clearFavourites();
+                System.out.println("LOL");
                 return true;
             }
         }));
@@ -44,7 +45,6 @@ public class PrefActivity extends PreferenceActivity {
         }));
 
         Preference hide = findPreference("favourites");
-
         hide.setOnPreferenceChangeListener(new Preference.OnPreferenceChangeListener() {
 
             @Override

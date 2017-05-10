@@ -28,7 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button btnNext;
     private ViewPager viewPager;
     private FragmentsPagerAdapterWelcompage fragmentsPagerAdapter;
-    private boolean isChecked;
+    private boolean isCheckedColumns;
+    private boolean isCheckedTheme;
 
     List<Application> apps;
     List<ApplicationInfo> appsInfo;
@@ -98,13 +99,19 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 if (viewPager.getCurrentItem() < fragmentsPagerAdapter.getCount() - 1) {
                     viewPager.setCurrentItem(viewPager.getCurrentItem() + 1);
                 } else if (viewPager.getCurrentItem() + 1 == fragmentsPagerAdapter.getCount()) {
-                    isChecked = ((RadioButton) findViewById(R.id.radioButton46)).isChecked();
-                    if (isChecked) {
+                    isCheckedColumns = ((RadioButton) findViewById(R.id.radioButton46)).isChecked();
+                    isCheckedTheme = ((RadioButton) findViewById(R.id.lightBtn)).isChecked();
+                    if (isCheckedColumns) {
                         ed.putInt("portret", 4);
                         ed.putInt("landscape", 6);
                     } else {
                         ed.putInt("portret", 5);
                         ed.putInt("landscape", 7);
+                    }
+                    if(isCheckedTheme){
+                        ed.putBoolean("theme", true);
+                    } else {
+                        ed.putBoolean("theme", false);
                     }
                     ed.apply();
                     startActivity(intent);

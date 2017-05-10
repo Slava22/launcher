@@ -1,6 +1,8 @@
 package com.example.cometlauncher.launcher;
 
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
@@ -42,6 +44,12 @@ public class Launcher extends AppCompatActivity implements SharedPreferences.OnS
         pref = PreferenceManager.getDefaultSharedPreferences(this);
         pref.registerOnSharedPreferenceChangeListener(this);
 
+        boolean theme = sPref.getBoolean("theme", true);
+        if(theme){
+            setTheme(R.style.AppTheme);
+        } else if (!theme){
+            setTheme(R.style.MyTheme);
+        }
     }
 
     @Override

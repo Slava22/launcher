@@ -20,7 +20,6 @@
         <ListPreference
             android:key="theme"
             android:title="@string/change_theme"
-            android:defaultValue="1"
             android:entries="@array/pref_change_theme_titles"
             android:entryValues="@array/pref_change_theme_values"
             android:negativeButtonText="@null"
