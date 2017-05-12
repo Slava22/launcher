@@ -17,7 +17,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
 import android.widget.ImageButton;
-import android.widget.TextView;
 
 import com.example.cometlauncher.Application;
 import com.example.cometlauncher.ListApps;
@@ -64,18 +63,18 @@ public class FavoritesFragment extends Fragment implements View.OnClickListener 
         apps = la.getFavApps();
 
         final EditText editText = (EditText) view.findViewById(R.id.uriText);
-        editText.setOnEditorActionListener(new TextView.OnEditorActionListener() {
-            public boolean onEditorAction(TextView v, int actionId, KeyEvent event) {
-                if (event != null && event.getKeyCode() == KeyEvent.KEYCODE_ENTER) {
-                    // обработка нажатия Enter
-                    String text = editText.getText().toString();
-
-                    openUri(text);
-                    return true;
-                }
-                return false;
-            }
-        });
+        editText.setOnKeyListener(new View.OnKeyListener() {
+                                      public boolean onKey(View v, int keyCode, KeyEvent event) {
+                                          if (event.getAction() == KeyEvent.ACTION_DOWN &&
+                                                  (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                                              String text = editText.getText().toString();
+                                              openUri(text);
+                                              return true;
+                                          }
+                                          return false;
+                                      }
+                                  }
+        );
 
         sPref = getActivity().getSharedPreferences("com.example.cometLauncher", Context.MODE_PRIVATE);
         portret = sPref.getInt("portret", 3);
